@@ -1,0 +1,407 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    text-decoration: none;
+    order: 1px solid red;
+}
+/*MOBILE*/
+@media screen and (max-width: 767px) {
+    .menu {
+        background-size: 40rem auto;
+        background-position-x: -15.5rem; /* sdgdgarg */ 
+        background-position-y: 10rem; /* trabajar desde el borde inferior */
+    }
+    nav {
+        right: 3%;
+    }
+    h1 {
+        font-size: 6rem;
+        font-weight: 650;
+    }
+    .homeBtn {
+        right: 2rem;
+        top: 2rem;
+        background-color: rgba(0, 0, 0, 0.226);
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+    .aboutContainer div h2 {
+        font-size: 2rem;
+        /*width: 80rem;*/
+    }
+    #abt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #abtpic {
+        height: auto;
+        width: 80%;
+    }
+    #abtxt {
+        font-size: 1.35rem;
+        width: 90%;
+        height: auto;
+    }
+    #abtxt span:first-child {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    #abtxt span {
+        font-size: 1.5rem;
+    }
+    .eg img {
+        width: 9%;
+        height: auto;
+    }
+    #cntc {
+    width: 85%;
+    font-size: 2rem;
+    top: 17rem;
+    }
+    .media img {
+    width: 5rem;
+    }
+    .media {
+    bottom: 4rem;
+    width: 50%;
+    }
+
+    .workContainer {
+        flex-direction: column;/*X*/
+    }
+    section {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container {
+        grid-gap: 1rem 0rem;
+        grid-template-columns: 1fr;
+    }
+    .projects {
+        margin-bottom: 8rem;
+        width: 15rem;
+        height: 16rem;
+        border-radius: 1.5rem;
+    }
+}
+/*PC*/
+@media screen and (min-width: 768px) {
+    .menu {
+        background-size: 70rem auto;
+        background-position-x: 16%;
+        background-position-y: 10rem;
+    }
+
+    nav {
+        right: 10%;
+    }
+    h1 {
+        font-size: 8rem;
+        font-weight: 700;
+    }
+    .homeBtn {
+        right: 5rem;
+        top: 3rem;
+    }
+    .aboutContainer div h2 {
+        font-size: 5rem;
+        width: 80rem;
+    }
+    #abt {
+        display: inline-flex;
+        justify-content: space-evenly;
+    }
+    #abtpic {
+        height: 100%;
+        width: auto;
+    }
+    #abtxt {
+        font-size: 1.6rem;
+        width: 56rem;
+        height: 100%;
+    }
+    #abtxt span:first-child {
+        margin-bottom: 2rem;
+        font-size: 3.4rem;
+        font-weight: 500;
+    }
+    #abtxt span {
+        font-size: 1.82rem;
+    }
+    .eg img {
+        width: 3.5rem;
+        height: auto;
+    }
+    #cntc {
+    width: 80rem;
+    font-size: 3rem;
+    top: 22rem;
+    }
+    .media img {
+        width: 8rem;
+    }
+    .media {
+        bottom: 6rem;
+        width: 25%; /*auto*/
+    }
+
+    .workContainer {
+        flex-direction: row;/*X*/
+    }
+    section {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .container {
+        grid-gap: 0 8rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .projects {
+        margin-bottom: 8rem;
+        width: 30rem;
+        height: 32rem;
+        border-radius: 1.5rem;
+        
+        transition: all 0.2s;
+    }
+    .projects:hover {
+        box-shadow: 0px 6px 12px 3px rgba(255, 255, 255, 0.692);
+        transform: scale(1.05);
+    }
+}
+
+
+html {
+    font-size: 62.5%;
+    /*cursor: url(), default;
+    maybe the pointer too idk*/
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Work Sans';
+}
+
+/*
+#entry {
+    position: fixed;
+    z-index: 2;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex; must be in flex
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    media
+    font-size: 4rem;
+}
+*/
+
+.menu {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(../images/MainFoto.png);
+    background-repeat: no-repeat;
+    /*background-position-y: 10rem; /* media */
+}
+
+nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+a {
+    cursor: pointer;
+    color: white;
+}
+
+nav a:hover {
+    /* media */
+    margin-right: 3rem;
+    transition: all 0.2s ease-in;
+}
+
+.homeBtn {
+    width: 2.5rem;
+    height: auto;
+    position: fixed;
+    z-index: 4;
+}
+
+.homeBtn:hover {
+    cursor: pointer;
+}
+
+.aboutContainer, .contactContainer {
+    width: 100%;
+    display: none; /* flex in JS */
+    flex-direction: column;
+    align-items: center;
+    background-color:black;
+}
+.workContainer {
+    width: 100%;
+    display: none; /* flex in JS */
+    align-items: center;
+    background-color:black;
+}
+
+#abtintro {
+    height: 100vh;
+    width: 100%;
+}
+
+.aboutContainer div h2 {
+    position: absolute;
+    left: 5rem;
+    bottom: 6rem;
+    font-weight: 600;
+}
+
+#abt {
+    width: 100%;
+    height: 100vh;
+}
+
+#abtpic {
+    transform: scaleX(-1);
+}
+
+#abtxt {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: justify;
+}
+.eg {
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+/* */
+@keyframes hvr-back-pulse {
+    50% {
+      background-color: #000000;
+    }
+  }
+  .hvr-back-pulse {
+    transition-duration: 0.5s;
+    transition-property: color, background-color;
+    cursor: pointer;
+  }
+  .hvr-back-pulse:hover, .hvr-back-pulse:focus, .hvr-back-pulse:active {
+    animation-name: hvr-back-pulse;
+    animation-duration: 1.7s;
+    animation-delay: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background-color: #616161;
+  }
+/* */
+.workContainer {
+    height:100vh;
+}
+section { /* media */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#rightT, #leftT {
+    /* media */
+    margin: auto 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#back {
+    display: none;
+    visibility: hidden;
+    position: fixed;
+    z-index: 4;
+    top: 3rem;
+    left: 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#back:hover {
+    cursor: pointer;
+}
+
+.left {
+    background-color: black;
+}
+
+.container {
+    position: absolute;
+    top: 100vh;
+    display: none; /* grid in JS*/
+}
+
+.projects {
+    background-color: whitesmoke; /* cambiar */
+    border: none;
+    overflow: hidden;
+    color: black;
+}
+
+.projects p {
+    text-align: justify;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 1.2rem;
+}
+
+.right {
+    background-color: black;
+}
+
+.contactContainer {
+    height:100vh;
+} 
+
+#cntc {
+    position: absolute;
+    text-align: justify;
+}
+
+.media {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+}
+
+div a {
+    display: flex;
+    justify-content: center;
+}
+
+/* Custom Scrollbar */
+*::-webkit-scrollbar {
+    width: 1em;
+}   
+*::-webkit-scrollbar-track {
+    background-color: black;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
