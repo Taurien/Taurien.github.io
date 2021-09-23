@@ -1,204 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Michel Cruz">
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>QP Asistencia</title>
+    <link rel="icon" type="image/png" href="./assets/images/Logo-head.png"> 
 
-        <link rel="icon" type="image/png" href="./images/logo_icon.svg"> 
-        <title>Michel Cruz</title>
-                
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-
-    <body>
-        <!--
-        <div id="entry" class="entry">
-            <span>HI</span>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <nav>
+        <div id="brand">
+            <a href="index.html"><img src="./assets/images/Logo.png" alt="QP asistencia logo" id="logo"></a>
+            <span>Profesionales a la mano.</span>
         </div>
-        -->
-
-
-        <div id="menu" class="menu">
-            
-            <nav>
-                <a href="#"><h1 id="about">Hello.<!-- About --></h1></a>
-                <a href="#"><h1 id="work">I am<!-- Work --></h1></a>
-                <a href="#"><h1 id="contact">Michel<!-- Contact --></h1></a>
-            </nav>
+        <div id="menu">
+            <ul>
+                <li><a href="./index.html">INICIO</a></li>
+                <li><a href="./about.html">QUIÉNES SOMOS</a></li>
+                <li><a href="./products.html">SERVICIOS</a></li>
+            </ul>
         </div>
-        
-        <div id="aboutContainer" class="aboutContainer">
-            <img class="homeBtn" src="./images/house.svg">
-            <div id="abtintro">
-            <h2>Graphic/Communication Design and Web Developer</h2>
-            </div>
-            <div id="abt">
-                <div id="abtxt">
-                    <span>About</span>
-                    <span>Hi, I'm Michel. Graphic designer and web developer in process. I'm a talented and dedicated person in everything I do. <br> I consider myself curious, multidisciplinary and easy to adapt to changes.</span><br>
-                    <p>
-                        Usually I look for several ways to solve a problem, just to learn and maybe apply some of them to another project or problem. <br> <br>
-                        I have a huge interest in the visual world, its order and the colors it can possess. Every day we are exposed to countless objects and stimuli, which many of them we do not detail. In my mind I make the exercise of trying to detail them all and observe the use of color, its layout, its relationship with respect to other objects or us as users, what influences it has and why, and thousands other questions that cross my mind. <br><br>
-                        This way of observing the world is what led me to choose design as a career and thanks to it I have been able to expand my judgment of what I observe and how many things are developed. <br><br>
-                        Recently I chose to immerse myself in the Web world, because the questions I ask myself and the basics are the same. Therefore, I'm daily learning and retaking the subject, to achieve the goal of being an IU/IX designer and web developer. <br><br>
-                    </p> <br>
-                    <!--<span>I have experience in:</span>-->
-                    <div class="eg">
-                        <!--<img src="./images/acrobat-reader.svg" alt="Acrobat Logo">-->
-                        <img src="./images/illustrator.svg" alt="Illustrator Logo">
-                        <img src="./images/photoshop.svg" alt="Photoshop Logo">
-                        <img src="./images/lightroom.svg" alt="Lightroom Logo">
-                        <img src="./images/indesign.svg" alt="Indesign Logo">
-                        <img src="./images/premiere.svg" alt="Premiere Logo">
-                        <img src="./images/after-effects.svg" alt="After Effects Logo">
-                        <img src="./images/animate.svg" alt="Animate Logo">
-                        <img src="./images/HTML5.svg" alt="HTML Logo">
-                        <img src="./images/CSS3.svg" alt="CSS Logo">
-                        <img src="./images/javascript.svg" alt="Javascript Logo">
-                    </div>
+        <div class="mobileMenu">
+          <img src="./assets/images/threemenu.svg" class="hamburger" id="hamburger">
+        </div>
+    </nav>
+      <div id="bg">
+        <div class="mobileNav" id="mobileNav">
+          <ul>
+            <li><a href="./index.html">INICIO</a></li>
+            <li><a href="./about.html">QUIÉNES SOMOS</a></li>
+            <li><a href="./products.html">SERVICIOS</a></li>
+          </ul>
+        </div>
+      </div>
+    <main class="main-content">
+        <section class="slideshow">
+          <div class="slideshow-inner">
+            <div class="slides">
+              <div class="slide is-active ">
+                <div class="slide-content">
+                  <div class="caption">
+                    <div class="title">Lorem Ipsum #1</div>
+                    <div class="text">
+                      <p>Slide description 1</p>
+                    </div> 
+                  </div>
                 </div>
-                <img id="abtpic" src="./images/Michel-Cruz.png" alt="Michel Cruz" width="2146" height="2224">
-            </div>
-        </div>
-
-        <div id="workContainer" class="workContainer">
-            <img class="homeBtn" src="./images/house.svg">
-            <span id="back">Work</span>
-
-            <section id="left" class="left hvr-back-pulse">
-                <h2 id="leftT">As Designer.</h2>
-                
-                <div id="containerL" class="container">
-
-                    <a href="https://bit.ly/3sWO3OB" target="_blank"><div class="projects">
-                        <img src="./images/Caja-Color.jpg" alt="Caja teoria del color">
-                        <p><strong>Happy Birthday Box</strong><br><br>
-                            Designed for children to have fun on their special day by including the box in their playtime.
-                        </p>
-                    </div></a>
-                    
-                    <a href="https://bit.ly/3mJ0Jrp" target="_blank"><div class="projects">
-                        <img src="./images/EdgeMagazine-CruzOspina.jpg" alt="Edge Magazine">
-                        <p><strong>Edge Magazine (Concept)</strong><br><br>
-                            The idea was to design and compose part of a magazine using photos that were taken and edited by us.
-                        </p>
-                    </div></a>
-                    
-                    <a href="https://bit.ly/3DDxLzk" target="_blank"><div class="projects">
-                        <img src="./images/Dino-Iso.jpg" alt="isometric dino">
-                        <p><strong>Isometric Dino - Toy</strong><br><br>
-                            From the abstraction of a dinosaur. I made a toy using isometric planes and its manual capable of being read by a child.
-                        </p>
-                    </div></a>
-                    
-                    <a href="https://bit.ly/3ytLrsC" target="_blank"><div class="projects">
-                        <img src="./images/nadie-te-preg.jpg" alt="nadie te preg" height="220">
-                        <p><strong>Nadie te pregunto - Sol Pereyra (Concept)</strong><br><br>
-                            More than a minute animated (including lyrics) for the song.
-                        </p>
-                    </div></a>
-                    <!--
-                    <a href="https://bit.ly/3gJiuDc"><div class="projects">
-                        <img src="" alt="principles of ani">
-                        <p>principles of ani</p>
-                    </div></a>
-                    -->
-                    <a href="https://bit.ly/3jpl0Qz" target="_blank"><div class="projects">
-                        <img src="./images/surreal.jpg" alt="surreal" height="220">
-                        <p><strong>Portrait</strong><br><br>
-                            Surrealistic portrait of problems in days of covid.
-                        </p>
-                    </div></a>
-                    
-                    <a href="https://bit.ly/3kDF3ue" target="_blank"><div class="projects">
-                        <img src="./images/corteiso.jpg" alt="cortes de madera foto">
-                        <p><strong>cortes de madera foto</strong><br><br>
-                            Toy for children. Made with silhouettes and laser cut.
-                        </p>
-                    </div></a>
-                    
-                    <a href="https://bit.ly/3kzeM07" target="_blank"><div class="projects">
-                        <img src="./images/Producto-final.jpg" alt="H.I portada">
-                        <p><strong>Hombre Invisble cover (Concept)</strong><br><br>
-                            Compose and design a completely new cover that will attract more readers.
-                        </p>
-                    </div></a>
-
-                    <a href="https://issuu.com/michel.cruz/docs/joji" target="_blank"><div class="projects">
-                        <img src="./images/Joji.jpg" alt="joji">
-                        <p><strong>El Osito Joji</strong><br><br>
-                            Book created and designed from scratch for children. 
-                        </p>
-                    </div></a>
-
-                    <a href="" target="_blank"><div class="projects">
-                        <img src="" alt="poe">
-                        <p><strong>El corazón delator - Edgar A. Poe (Concept)</strong><br><br>
-                            Create a pop-up book for the story, maintaining and enhancing the atmosphere it already generates.
-                        </p>
-                    </div></a>
+                <div class="image-container"> 
+                  <img src="./assets/images/samuele-errico-piccarini-MyjVReZ5GLQ-unsplash.jpg" alt="Persona manejando un vehículo" class="image" />
                 </div>
-            </section>
-            <section id="right" class="right hvr-back-pulse">
-                <h2 id="rightT">As Web Dev.</h2>
-
-                <div id="containerR" class="container">
-
-                    <a href="https://taurien.github.io/RockPaperScissors/" target="_blank"><div class="projects">
-                        <img src="./images/RPS.jpg" alt="Rock Paper Scissors">
-                        <p><strong>Rock Paper Scissors</strong><br><br>
-                            The classic game but now on the web.
-                        </p>
-                    </div></a>
-
-                    <a href="https://taurien.github.io/Survey-Form/" target="_blank"><div class="projects">
-                        <img src="./images/Survey.jpg" alt="Survey Form">
-                        <p><strong>Survey Form</strong><br><br>
-                            An example of a digital form.
-                        </p>
-                    </div></a>
-
-                    <a href="https://taurien.github.io/Landing-Page/" target="_blank"><div class="projects">
-                        <img src="./images/Landing-Page.jpg" alt="Landing Page">
-                        <p><strong>Landing Page</strong><br><br>
-                            Example of a home page for a company.
-                        </p>
-                    </div></a>
-                    <!--
-                    <a href="#" target="_blank"><div class="projects">
-                        <img src="" alt="4">
-                        <p><strong>Landing Page</strong><br><br>
-                            Lorem ipsum dolor sit amet.
-                        </p>
-                    </div></a>-->
-                </div>    
-            </section>
-        </div>
-
-        <div id="contactContainer" class="contactContainer">
-            <img class="homeBtn" src="./images/house.svg">
-            <div id="cntc">
-            <h2>Let's create something together.</h2> <br>
-            <h2>Tell me about your project.</h2>
+              </div>
+              <div class="slide">
+                <div class="slide-content">
+                  <div class="caption">
+                    <div class="title">Lorem Ipsum #2</div>
+                    <div class="text">
+                      <button><strong>CONTÁCTANOS</strong></button>
+                    </div> 
+                  </div>
+                </div>
+                <div class="image-container">
+                  <img src="./assets/images/pexels-acharaporn-kamornboonyarush-1028742.jpg" alt="Foto dentro de un vehículo" class="image" />
+                </div>
+              </div>
             </div>
-            <!--<div>
-            <h3>Contact</h3>
-            <p></p>
+            <!--<div class="pagination">
+              <div class="item is-active"> 
+                <span class="icon">1</span>
+              </div>
+              <div class="item">
+                <span class="icon">2</span>
+              </div>
             </div>-->
-            <div class="media">
-            <a href="https://github.com/Taurien" target="_blank"><img src="./images/GitHub.svg" alt="GitHub Logo"></a>
-            <a href="https://www.linkedin.com/in/michel-a-cruz/" target="_blank"><img src="./images/Linkedin.svg" alt="Linkedin Logo"></a>
-            <a href="mailto:michel.a.c474@gmail.com" target="_blank"><img src="./images/Mail.svg" alt="Email Logo"></a>
-            <!--<a href=""><img src="" alt="Logo de "></a>
-            <a href=""><img src="" alt="Logo de "></a>-->
+            <div class="arrows">
+              <div class="arrow prev">
+                <span class="svg svg-arrow-left">
+                  <svg version="1.1" id="svg4-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve"> <path d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z"/> </svg>
+                  <span class="alt sr-only"></span>
+                </span>
+              </div>
+              <div class="arrow next">
+                <span class="svg svg-arrow-right">
+                  <svg version="1.1" id="svg5-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve"> <path d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-0.391-1.023,0-1.414C0.488,0.098,0.744,0,1,0z"/> </svg>
+                  <span class="alt sr-only"></span>
+                </span>
+              </div>
+            </div>
+          </div> 
+        </section>
+    </main>
+
+    <section id="products">
+        <div id="products_msj">
+            <h1>ASISTENCIA VEHICULAR</h1>
+            <P>*Servicios disponibles*</P>
+        </div>
+        <div class="serviceContainer">
+            <div class="service">
+                <img src="./assets/images/crane.svg" alt="Icono de grúa">
+                <h3>Grúa</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="service">
+                <img src="./assets/images/toolbox.svg" alt="Icono de caja de herramientas">
+                <h3>Carro Taller</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="service">
+                <img src="./assets/images/valet.svg" alt="Icono de ">
+                <h3>Condcutor Elegido</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="service">
+                <img src="./assets/images/driver.svg" alt="Icono de ">
+                <h3>Conductor Profesional</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="service">
+                <img src="./assets/images/driver-license.svg" alt="Icono de ">
+                <h3>Conductor Especializado</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="service">
+                <img src="./assets/images/route.svg" alt="Icono de ">
+                <h3>Conductor Programado</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="service">
+                <img src="./assets/images/parking.svg" alt="Icono de ">
+                <h3>Valet Parking</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="service">
+                <img src="./assets/images/trolley.svg" alt="Icono de ">
+                <h3>Mensajería</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="service">
+              <img src="./assets/images/fast-delivery.svg" alt="Icono de ">
+              <h3>Dezplazamiento</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+    </section>
+
+    <section id="videoBanner">
+        <video autoplay muted loop id="bgVideo">
+            <source src="./assets/video/production ID_4312273.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div id="textOverlay">
+        <p>Lorem Ipsum Dolor Sit Amet</p>
+        <button><strong>CONTÁCTANOS</strong></button>
+        </div>
+    </section>
+
+    <section id="work">
+        <div id="work_msj">
+            <h2>NUESTRA EXPERIENCIA</h2>
+            <P>Proveedores de servicio de</P>
+        </div>
+        <div id="insuranceContainer">
+            <div class="seguros">
+                <a href="https://assisprex.com/" target="_blank"><img src="./assets/images/AssisPrex-logo.png" alt="AssisPrex logo"></a>
+                <a href="https://assisprex.com/" target="_blank">AssisPrex</a>    
+            </div>
+            <div class="seguros">
+                <a href="https://ikeasistencia.com.co/" target="_blank"><img src="./assets/images/Ike-logo.png" alt="Iké logo"></a>
+                <a href="https://ikeasistencia.com.co/" target="_blank">Iké Asistencia</a>    
+            </div>
+            <div class="seguros">
+                <a href="https://www.allianz.co/" target="_blank"><img src="./assets/images/Allianz-logo.svg" alt="Allianz logo"></a>
+                <a href="https://www.allianz.co/" target="_blank">Allianz</a>    
+            </div>
+            <div class="seguros">
+                <a href="https://www.segurosdelestado.com/" target="_blank"><img src="./assets/images/SegurosDelEstado-logo.png" alt="Seguros Del Estado logo"></a>
+                <a href="https://www.segurosdelestado.com/" target="_blank">Seguros del Estado</a>    
+            </div>
+            <div class="seguros">
+                <a href="https://aseguradorasolidaria.com.co/" target="_blank"><img src="./assets/images/AseguradoraSolidaria-logo.svg" alt="Aseguradora Solidaria logo"></a>
+                <a href="https://aseguradorasolidaria.com.co/" target="_blank">Solidaria de Colombia</a>    
+            </div>
+            <div class="seguros">
+                <a href="https://www.hdi.com.co/" target="_blank"><img src="./assets/images/Hdi-logo.svg" alt="Hdi Seguros logo"></a>
+                <a href="https://www.hdi.com.co/" target="_blank">HDI Seguros S.A.</a>    
+            </div>
+            <div class="seguros">
+                <a href="https://www.previsora.gov.co/" target="_blank"><img src="./assets/images/Previsora-logo.png" alt="Previsora logo"></a>
+                <a href="https://www.previsora.gov.co/" target="_blank">Previsora Seguros</a>    
+            </div>
+            <div class="seguros">
+                <a href="https://www.laequidadseguros.coop/"  target="_blank"><img src="./assets/images/EquidadSeguros-logo.svg" alt="Equidad Seguros logo"></a>
+                <a href="https://www.laequidadseguros.coop/"  target="_blank">Equidad Seguros</a>    
+            </div>
+            <div class="seguros">
+                <a href="https://www.zurichseguros.com.co/" target="_blank"><img src="./assets/images/Zurich-logo.svg" alt="Zurich logo"></a>
+                <a href="https://www.zurichseguros.com.co/" target="_blank">Zurich Insurance Group</a>    
+            </div>
+            <div class="seguros">
+                <a href="https://www.libertycolombia.com.co/" target="_blank"><img src="./assets/images/Liberty-logo.svg" alt="Liberty logo"></a>
+                <a href="https://www.libertycolombia.com.co/" target="_blank">Liberty Seguros</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div id="up">
+            <div class="leftF" id="contact">
+                <p><strong>CONTÁCTANOS</strong></p><br>
+                <p><a href="#"><img src="./assets/images/whatsapp.svg" alt="">+57 313 304 0473</a> - <a href="#">+602 390 0288</a></p><br>
+                <a href="mailto:coordinacion@qpasistencia.com"><img src="./assets/images/email.svg" alt="">coordinacion@qpasistencia.com</a><br>
+                <a href="https://goo.gl/maps/6BvokFfJdUiWXXrQ9"><img src="./assets/images/location-pin.svg" alt="">Calle 46 No. 113-29 Oficina 402 TC</a><br><hr>
+                <p>Cali - Valle del Cauca - Colombia</p>
+            </div>
+            <div id="descript" class="rightF">
+                <p><strong>QP ASISTENCIA</strong></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugit ad, neque ipsum quaerat corporis ea unde natus ratione dolorem nulla voluptate obcaecati consequuntur fugiat, ipsa nobis excepturi aut deleniti.</p>
             </div>
         </div>
 
-        <script src="./js/main.js"></script>
-    </body>
+        <div id="bottom">
+                <p>Developed by ... |</p><p>Copyright 2021 © QUINTERO POVEDA ASISTENCIA S.A.S</p>
+                <!--<a href="#">Política de Privacidad y Tratamiento de Datos Personales</a>|
+                <a href="#">Política de Seguridad Vial</a>-->
+        </div>
+    </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script>
+    <script src="./js/main.js"></script>
+</body>
 </html>

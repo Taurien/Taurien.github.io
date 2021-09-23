@@ -1,176 +1,246 @@
-const entry = document.getElementById('entry');
-const mainMenu = document.getElementById('menu');
+//Mobile Menú
+const mobileMenu = document.querySelectorAll('.hamburger')
+const hamburger = document.getElementById('hamburger')
+const mobileNav = document.getElementById('mobileNav')
+const bg = document.getElementById('bg')
 
-const about = document.getElementById('about');
-const work = document.getElementById('work');
-const contact = document.getElementById('contact');
+function menuInteraction () {
+  mobileNav.style.display = 'flex'
+  bg.style.display = 'flex'
+  hamburger.style.visibility = 'hidden'
 
-const aboutContainer = document.getElementById('aboutContainer');
-const workContainer = document.getElementById('workContainer');
-const contactContainer = document.getElementById('contactContainer');
-
-const homeBtn = document.querySelectorAll('.homeBtn');
-
-const left = document.getElementById('left');
-const leftTitle =document.getElementById('leftT');
-const right = document.getElementById('right');
-const rightTitle =document.getElementById('rightT');
-const gback = document.getElementById('back');
-
-const containerL = document.getElementById('containerL');
-const containerR = document.getElementById('containerR');
-
-const animationM = document.querySelectorAll('.hvr-back-pulse');
-
-// Clear entry
-/*
-function clearEntry() {
-    entry.style.display = 'none';
 }
+mobileMenu.forEach(img => img.addEventListener('touchend', menuInteraction));
+function test(e) {
+  if (e.target == mobileNav || e.target == bg) {
+    mobileNav.style.display = 'none'
+    bg.style.display = 'none'
+    hamburger.style.visibility = 'visible'
+  }
+}
+window.addEventListener('touchstart', test)
+
+/* CAROUSEL */
+var slideshowDuration = 4000;
+var slideshow=$('.main-content .slideshow');
+
+function slideshowSwitch(slideshow,index,auto){
+  if(slideshow.data('wait')) return;
+
+  var slides = slideshow.find('.slide');
+  var pages = slideshow.find('.pagination');
+  var activeSlide = slides.filter('.is-active');
+  var activeSlideImage = activeSlide.find('.image-container');
+  var newSlide = slides.eq(index);
+  var newSlideImage = newSlide.find('.image-container');
+  var newSlideContent = newSlide.find('.slide-content');
+  var newSlideElements=newSlide.find('.caption > *');
+  if(newSlide.is(activeSlide))return;
+
+  newSlide.addClass('is-new');
+  var timeout=slideshow.data('timeout');
+  clearTimeout(timeout);
+  slideshow.data('wait',true);
+  var transition=slideshow.attr('data-transition');
+  if(transition=='fade'){
+    newSlide.css({
+      display:'block',
+      zIndex:2
+    });
+    newSlideImage.css({
+      opacity:0
+    });
+
+    TweenMax.to(newSlideImage,1,{
+      alpha:1,
+      onComplete:function(){
+        newSlide.addClass('is-active').removeClass('is-new');
+        activeSlide.removeClass('is-active');
+        newSlide.css({display:'',zIndex:''});
+        newSlideImage.css({opacity:''});
+        slideshow.find('.pagination').trigger('check');
+        slideshow.data('wait',false);
+        if(auto){
+          timeout=setTimeout(function(){
+            slideshowNext(slideshow,false,true);
+          },slideshowDuration);
+          slideshow.data('timeout',timeout);}}});
+  } else {
+    if(newSlide.index()>activeSlide.index()){
+      var newSlideRight=0;
+      var newSlideLeft='auto';
+      var newSlideImageRight=-slideshow.width()/8;
+      var newSlideImageLeft='auto';
+      var newSlideImageToRight=0;
+      var newSlideImageToLeft='auto';
+      var newSlideContentLeft='auto';
+      var newSlideContentRight=0;
+      var activeSlideImageLeft=-slideshow.width()/4;
+    } else {
+      var newSlideRight='';
+      var newSlideLeft=0;
+      var newSlideImageRight='auto';
+      var newSlideImageLeft=-slideshow.width()/8;
+      var newSlideImageToRight='';
+      var newSlideImageToLeft=0;
+      var newSlideContentLeft=0;
+      var newSlideContentRight='auto';
+      var activeSlideImageLeft=slideshow.width()/4;
+    }
+
+    newSlide.css({
+      display:'block',
+      width:0,
+      right:newSlideRight,
+      left:newSlideLeft
+      ,zIndex:2
+    });
+
+    newSlideImage.css({
+      width:slideshow.width(),
+      right:newSlideImageRight,
+      left:newSlideImageLeft
+    });
+
+    newSlideContent.css({
+      width:slideshow.width(),
+      left:newSlideContentLeft,
+      right:newSlideContentRight
+    });
+
+    activeSlideImage.css({
+      left:0
+    });
+
+    TweenMax.set(newSlideElements,{y:20,force3D:true});
+    TweenMax.to(activeSlideImage,1,{
+      left:activeSlideImageLeft,
+      ease:Power3.easeInOut
+    });
+
+    TweenMax.to(newSlide,1,{
+      width:slideshow.width(),
+      ease:Power3.easeInOut
+    });
+
+    TweenMax.to(newSlideImage,1,{
+      right:newSlideImageToRight,
+      left:newSlideImageToLeft,
+      ease:Power3.easeInOut
+    });
+
+    TweenMax.staggerFromTo(newSlideElements,0.8,{alpha:0,y:60},{alpha:1,y:0,ease:Power3.easeOut,force3D:true,delay:0.6},0.1,function(){
+      newSlide.addClass('is-active').removeClass('is-new');
+      activeSlide.removeClass('is-active');
+      newSlide.css({
+        display:'',
+        width:'',
+        left:'',
+        zIndex:''
+      });
+
+      newSlideImage.css({
+        width:'',
+        right:'',
+        left:''
+      });
+
+      newSlideContent.css({
+        width:'',
+        left:''
+      });
+
+      newSlideElements.css({
+        opacity:'',
+        transform:''
+      });
+
+      activeSlideImage.css({
+        left:''
+      });
+
+      slideshow.find('.pagination').trigger('check');
+      slideshow.data('wait',false);
+      if(auto){
+        timeout=setTimeout(function(){
+          slideshowNext(slideshow,false,true);
+        },slideshowDuration);
+        slideshow.data('timeout',timeout);
+      }
+    });
+  }
+}
+
+function slideshowNext(slideshow,previous,auto){
+  var slides=slideshow.find('.slide');
+  var activeSlide=slides.filter('.is-active');
+  var newSlide=null;
+  if(previous){
+    newSlide=activeSlide.prev('.slide');
+    if(newSlide.length === 0) {
+      newSlide=slides.last();
+    }
+  } else {
+    newSlide=activeSlide.next('.slide');
+    if(newSlide.length==0)
+      newSlide=slides.filter('.slide').first();
+  }
+
+  slideshowSwitch(slideshow,newSlide.index(),auto);
+}
+
+function homeSlideshowParallax(){
+  var scrollTop=$(window).scrollTop();
+  if(scrollTop>windowHeight) return;
+  var inner=slideshow.find('.slideshow-inner');
+  var newHeight=windowHeight-(scrollTop/2);
+  var newTop=scrollTop*0.8;
+
+  inner.css({
+    transform:'translateY('+newTop+'px)',height:newHeight
+  });
+}
+
+$(document).ready(function() {
+ $('.slide').addClass('is-loaded');
+
+ $('.slideshow .arrows .arrow').on('click',function(){
+  slideshowNext($(this).closest('.slideshow'),$(this).hasClass('prev'));
+});
+
+ $('.slideshow .pagination .item').on('click',function(){
+  slideshowSwitch($(this).closest('.slideshow'),$(this).index());
+});
+
+ $('.slideshow .pagination').on('check',function(){
+  var slideshow=$(this).closest('.slideshow');
+  var pages=$(this).find('.item');
+  var index=slideshow.find('.slides .is-active').index();
+  pages.removeClass('is-active');
+  pages.eq(index).addClass('is-active');
+});
+
+/* Lazyloading
+$('.slideshow').each(function(){
+  var slideshow=$(this);
+  var images=slideshow.find('.image').not('.is-loaded');
+  images.on('loaded',function(){
+    var image=$(this);
+    var slide=image.closest('.slide');
+    slide.addClass('is-loaded');
+  });
 */
 
-// Hover Effect PC
-function over(e) {
-    if (e.target == about) {
-        about.innerHTML = `About`
-    } else if (e.target == work) {
-        work.innerHTML = `Work`
-    } else if (e.target == contact) {
-        contact.innerHTML = `Contact`
-    }
-}
+var timeout=setTimeout(function(){
+  slideshowNext(slideshow,false,true);
+},slideshowDuration);
 
-function out() {
-        about.innerHTML = `Hello.`
-        work.innerHTML = `I am`
-        contact.innerHTML = `Michel`
-}
+slideshow.data('timeout',timeout);
+});
 
-// Reveal the menu MOBILE
-function tap() {
-    
-        about.innerHTML = `About`
-        work.innerHTML = `Work`
-        contact.innerHTML = `Contact`        
-}
-
-/*function tap2() {
-    if (about.textContent == 'About') {
-        about.innerHTML = `Hello.`
-        work.innerHTML = `I am`
-        contact.innerHTML = `Michel`
-    }
-}*/
-
-// Hide the main menu
-function disappear(e) {
-    if (e.target == about) {
-        mainMenu.style.display = 'none';
-        aboutContainer.style.display = 'flex';
-    } else if (e.target == work) {
-        mainMenu.style.display = 'none';
-        workContainer.style.display = 'flex';
-    } else if (e.target == contact) {
-        mainMenu.style.display = 'none';
-        contactContainer.style.display = 'flex';
-    }
-}
-
-// Main menu again
-homeBtn.forEach(/*la clave esta aqui*/img => img.addEventListener('click', showMenu));
-
-function showMenu() {
-    mainMenu.style.display = 'flex';
-    aboutContainer.style.display = 'none';
-    workContainer.style.display = 'none';
-    contactContainer.style.display = 'none';
-
-    left.style.display = 'flex';
-    right.style.display = 'flex';
-
-    left.style.overflowY = 'hidden';
-    right.style.overflowY = 'hidden';
-
-    containerL.style.display = 'none';
-    containerR.style.display = 'none';
-
-    gback.style.visibility = 'hidden';
-
-
-    animationM.forEach.call(animationM, function(el) {
-        el.classList.add("hvr-back-pulse");
-    });
-}
-
-// Work menu
-animationM.forEach(section => section.addEventListener('click', menuL_or_R))
-
-function menuL_or_R(e) {
-    //remove the class and stops the animation
-    animationM.forEach.call(animationM, function(el) {
-        el.classList.remove("hvr-back-pulse");
-    });
-
-
-    if (e.target == left || e.target == leftTitle){
-        gback.style.visibility = 'visible';
-        gback.style.display = 'initial';
-        right.style.display = 'none';
-        left.style.width = '100%';
-        left.style.height = '100vh';
-        left.style.overflowY = 'scroll';
-        
-        containerL.style.display = 'grid';
-
-    } else if (e.target == right || e.target == rightTitle) {
-        gback.style.visibility = 'visible';
-        gback.style.display = 'initial';
-        left.style.display = 'none';
-        right.style.width = '100%';
-        right.style.height = '100vh';
-        right.style.overflowY = 'scroll';
-
-        containerR.style.display = 'grid';
-
-    }
-}
-
-function goback(e) {
-    if (e.target == gback) {
-    workContainer.style.display = 'flex';
-    
-    gback.style.visibility = 'hidden';
-    left.style.display = 'flex';
-    right.style.display = 'flex';
-
-    left.style.overflowY = 'hidden';
-    right.style.overflowY = 'hidden';
-
-    containerL.style.display = 'none';
-    containerR.style.display = 'none';
-    //return the class for continue the animation
-    animationM.forEach.call(animationM, function(el) {
-        el.classList.add("hvr-back-pulse");
-    });
-    }
+if($('.main-content .slideshow').length > 1) {
+  $(window).on('scroll',homeSlideshowParallax);
 }
 
 
-// Event Listeners
-// maybe onload animations to improve the UX
 
-// PC
-window.addEventListener('mouseover', over);
-window.addEventListener('mouseout', out);
-window.addEventListener('click', disappear);
-window.addEventListener('click', goback);
-
-/* Find a spot
-window.addEventListener('click', clearEntry);
-window.addEventListener('keydown', clearEntry);
-*/
-
-// MOBILE
-// if i touch the screen it reveals the menu -but if i touch again shows "hello im..."-
-window.addEventListener('touchend', tap);
-//window.addEventListener('touchend', tap2);
