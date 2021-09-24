@@ -3,9 +3,11 @@ const about = document.getElementById('about');
 const work = document.getElementById('work');
 const contact = document.getElementById('contact');
 /* work */
-const left = document.getElementById('left');
-const leftTitle =document.getElementById('leftT');
-const right = document.getElementById('right');
+const left = document.getElementById('left_sect');
+const leftSidebar = document.getElementById('sidebarL');
+const leftTitle = document.getElementById('leftT');
+const right = document.getElementById('right_sect');
+const rightSidebar = document.getElementById('sidebarR');
 const rightTitle =document.getElementById('rightT');
 const gback = document.getElementById('back');
 const containerL = document.getElementById('containerL');
@@ -37,6 +39,7 @@ function tap() {
 }
 
 // Work interaction
+
 animationM.forEach(section => section.addEventListener('click', menuL_or_R))
 
 function menuL_or_R(e) {
@@ -46,23 +49,19 @@ function menuL_or_R(e) {
         })
 
 
-    if (e.target == left || e.target == leftTitle){
+    if (e.target == left || e.target == leftSidebar || e.target == leftTitle){
         gback.style.visibility = 'visible';
-        gback.style.display = 'initial';
         right.style.display = 'none';
         left.style.width = '100%';
-        left.style.height = '100vh';
-        left.style.overflowY = 'scroll';
+        //leftSidebar.style.height = '100vh';
         
         containerL.style.display = 'grid';
 
-    } else if (e.target == right || e.target == rightTitle) {
+    } else if (e.target == right || e.target == rightSidebar || e.target == rightTitle) {
         gback.style.visibility = 'visible';
-        gback.style.display = 'initial';
         left.style.display = 'none';
         right.style.width = '100%';
-        right.style.height = '100vh';
-        right.style.overflowY = 'scroll';
+        //rightSidebar.style.height = '100vh';
 
         containerR.style.display = 'grid';
 
@@ -71,14 +70,12 @@ function menuL_or_R(e) {
 
 function goback(e) {
     if (e.target == gback) {
-        workContainer.style.display = 'flex';
         
         gback.style.visibility = 'hidden';
         left.style.display = 'flex';
+        //leftSidebar.style.height = '50vh';
         right.style.display = 'flex';
-
-        left.style.overflowY = 'hidden';
-        right.style.overflowY = 'hidden';
+        //rightSidebar.style.height = '50vh';
 
         containerL.style.display = 'none';
         containerR.style.display = 'none';
