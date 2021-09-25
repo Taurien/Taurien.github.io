@@ -4,7 +4,7 @@
     box-sizing: border-box;
     user-select: none;
     text-decoration: none;
-    border: 1px solid red;
+    order: 1px solid red;
 }
 
 html {
@@ -32,6 +32,7 @@ body {
     }
     /* index */
     .menu {
+        /*background-image: url(../assets/images/MainFoto*mobile version*.png);*/
         background-size: 44rem auto;
         background-position: -16.5rem bottom;
     }
@@ -114,9 +115,8 @@ body {
     }
     /* index */
     .menu {
-        background-size: 70rem auto;
-        background-position-x: 16%;
-        background-position-y: 10rem;
+        background-size: 68rem auto;
+        background-position:  -4vw/*X*/ 8rem;
     }
 
     nav {
