@@ -4,7 +4,7 @@
     box-sizing: border-box;
     user-select: none;
     text-decoration: none;
-    order: 1px solid red;
+    border: 1px solid red;
 }
 
 html {
