@@ -32,9 +32,8 @@ body {
     }
     /* index */
     .menu {
-        background-size: 40rem auto;
-        background-position-x: -15.5rem; /* sdgdgarg */ 
-        background-position-y: 10rem; /* trabajar desde el borde inferior */
+        background-size: 44rem auto;
+        background-position: -16.5rem bottom;
     }
     nav {
         right: 3%;
