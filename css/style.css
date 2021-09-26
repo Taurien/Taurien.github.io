@@ -23,6 +23,12 @@ body {
 
 /* --MOBILE-- */
 @media screen and (max-width: 767px) {
+    #test123 { /*add bouncing effect*/
+        align-self: center;
+        position: absolute;
+        z-index: 2;
+        bottom: 3rem;
+    }
     .aHome {
         right: 0rem;
         top: 0rem;
@@ -31,10 +37,10 @@ body {
         overflow: hidden;
     }
     /* index */
-    .menu {
+    .menu { /*--issue--*/
         /*background-image: url(../assets/images/MainFoto*mobile version*.png);*/
-        background-size: 44rem auto;
-        background-position: -16.5rem bottom;
+        background-size: 50rem auto;
+        background-position: -16.5rem top;
     }
     nav {
         right: 3%;
@@ -109,13 +115,16 @@ body {
 }
 /* --PC-- */
 @media screen and (min-width: 768px) {
+    #test123 {
+        display: none;
+    }
     .aHome {
         right: 0rem;/**/
         top: 0rem;/**/
     }
     /* index */
-    .menu {
-        background-size: 68rem auto;
+    .menu { /*--issue--*/
+        background-size: 70rem auto;
         background-position:  -4vw/*X*/ 8rem;
     }
 
