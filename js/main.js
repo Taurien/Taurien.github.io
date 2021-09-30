@@ -12,7 +12,8 @@ const rightTitle =document.getElementById('rightT');
 const gback = document.getElementById('back');
 const containerL = document.getElementById('containerL');
 const containerR = document.getElementById('containerR');
-const animationM = document.querySelectorAll('.hvr-back-pulse');
+const animationPc = document.querySelectorAll('.hvr-back-pulse');
+const animationMob = document.querySelectorAll('.tracking-in-expand')
 
 // Main Menu hover effects
 function over(e) {
@@ -40,12 +41,15 @@ function tap() {
 
 // Work interaction
 
-animationM.forEach(section => section.addEventListener('click', menuL_or_R))
+animationPc.forEach(section => section.addEventListener('click', menuL_or_R))
 
 function menuL_or_R(e) {
-    //remove the class and stops the animation
-        animationM.forEach.call(animationM, function(el) {
+    //remove the class n stops the animation
+        animationPc.forEach.call(animationPc, function(el) {
             el.classList.remove("hvr-back-pulse");
+        })
+        animationMob.forEach.call(animationMob, function(el) {
+            el.classList.remove("tracking-in-expand");
         })
 
 
@@ -53,6 +57,7 @@ function menuL_or_R(e) {
         gback.style.visibility = 'visible';
         right.style.display = 'none';
         left.style.width = '100%';
+        leftSidebar.style.border = 'none';//for display only
         //leftSidebar.style.height = '100vh';
         
         containerL.style.display = 'grid';
@@ -61,6 +66,7 @@ function menuL_or_R(e) {
         gback.style.visibility = 'visible';
         left.style.display = 'none';
         right.style.width = '100%';
+        rightSidebar.style.border = 'none';//for display only
         //rightSidebar.style.height = '100vh';
 
         containerR.style.display = 'grid';
@@ -73,15 +79,20 @@ function goback(e) {
         
         gback.style.visibility = 'hidden';
         left.style.display = 'flex';
+        leftSidebar.style.borderBottom = '1px solid white';//for display only
         //leftSidebar.style.height = '50vh';
         right.style.display = 'flex';
+        rightSidebar.style.borderTop = '1px solid white';//for display only
         //rightSidebar.style.height = '50vh';
 
         containerL.style.display = 'none';
         containerR.style.display = 'none';
-        //return the class for continue the animation
-            animationM.forEach.call(animationM, function(el) {
+        //give back the class n continue the animation
+            animationPc.forEach.call(animationPc, function(el) {
                 el.classList.add("hvr-back-pulse");
+            })
+            animationMob.forEach.call(animationMob, function(el) {
+                el.classList.add("tracking-in-expand");
             })
     }
 }
