@@ -97,12 +97,6 @@ body {
     .tracking-in-expand {/*como clase*/
         animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     }
-    #sidebarL {/*for display only*/
-        border-bottom: 1px solid white;
-    } 
-    #sidebarR {/*for display only*/
-        border-top: 1px solid white;
-    }
     #sidebarL, #sidebarR {
         height: 50vh;
     }
