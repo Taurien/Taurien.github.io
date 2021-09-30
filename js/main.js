@@ -1,3 +1,13 @@
+// Solve the  100vh behavior on mobile
+function resetHeight(){
+    // reset the body height to that of the inner browser
+    document.body.style.height = window.innerHeight + "px";
+}
+// reset the height whenever the window's resized
+window.addEventListener("resize", resetHeight);
+// called to initially set the height.
+resetHeight();
+
 /* index */
 const about = document.getElementById('about');
 const work = document.getElementById('work');
@@ -57,7 +67,6 @@ function menuL_or_R(e) {
         gback.style.visibility = 'visible';
         right.style.display = 'none';
         left.style.width = '100%';
-        leftSidebar.style.border = 'none';//for display only
         //leftSidebar.style.height = '100vh';
         
         containerL.style.display = 'grid';
@@ -66,7 +75,6 @@ function menuL_or_R(e) {
         gback.style.visibility = 'visible';
         left.style.display = 'none';
         right.style.width = '100%';
-        rightSidebar.style.border = 'none';//for display only
         //rightSidebar.style.height = '100vh';
 
         containerR.style.display = 'grid';
@@ -79,10 +87,8 @@ function goback(e) {
         
         gback.style.visibility = 'hidden';
         left.style.display = 'flex';
-        leftSidebar.style.borderBottom = '1px solid white';//for display only
         //leftSidebar.style.height = '50vh';
         right.style.display = 'flex';
-        rightSidebar.style.borderTop = '1px solid white';//for display only
         //rightSidebar.style.height = '50vh';
 
         containerL.style.display = 'none';
