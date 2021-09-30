@@ -1,28 +1,31 @@
 /* Solve the  100vh behavior on mobile */
 function resetHeight(){
     // reset the body height to that of the inner browser
-    document.body.style.height = window.innerHeight + 'px';
+    document.body.style.height = window.innerHeight + 'px'
 }
 // reset the height whenever the window's resized
-window.addEventListener('resize', resetHeight);
-// called to initially set the height.
-resetHeight();
+window.addEventListener('resize', resetHeight)
+const mobileQuery = window.matchMedia('(max-width: 767px)')
+    if (mobileQuery.matches) {
+    // called to initially set the height.
+        resetHeight()
+    }
 
 /* index */
-const about = document.getElementById('about');
-const work = document.getElementById('work');
-const contact = document.getElementById('contact');
+const about = document.getElementById('about')
+const work = document.getElementById('work')
+const contact = document.getElementById('contact')
 /* work */
-const left = document.getElementById('left_sect');
-const leftSidebar = document.getElementById('sidebarL');
-const leftTitle = document.getElementById('leftT');
-const right = document.getElementById('right_sect');
-const rightSidebar = document.getElementById('sidebarR');
-const rightTitle =document.getElementById('rightT');
-const gback = document.getElementById('back');
-const containerL = document.getElementById('containerL');
-const containerR = document.getElementById('containerR');
-const animationPc = document.querySelectorAll('.hvr-back-pulse');
+const left = document.getElementById('left_sect')
+const leftSidebar = document.getElementById('sidebarL')
+const leftTitle = document.getElementById('leftT')
+const right = document.getElementById('right_sect')
+const rightSidebar = document.getElementById('sidebarR')
+const rightTitle =document.getElementById('rightT')
+const gback = document.getElementById('back')
+const containerL = document.getElementById('containerL')
+const containerR = document.getElementById('containerR')
+const animationPc = document.querySelectorAll('.hvr-back-pulse')
 const animationMob = document.querySelectorAll('.tracking-in-expand')
 
 // Main Menu hover effects
@@ -55,68 +58,73 @@ animationPc.forEach(section => section.addEventListener('click', menuL_or_R))
 
 function menuL_or_R(e) {
     //remove the class n stops the animations
-        animationPc.forEach.call(animationPc, function(el) {
-            el.classList.remove("hvr-back-pulse");
-        })
-        animationMob.forEach.call(animationMob, function(el) {
-            el.classList.remove("tracking-in-expand");
-        })
+    animationPc.forEach.call(animationPc, function(el) {
+        el.classList.remove("hvr-back-pulse")
+    })
+    animationMob.forEach.call(animationMob, function(el) {
+        el.classList.remove("tracking-in-expand")
+    })
 
 
     if (e.target == left || e.target == leftSidebar || e.target == leftTitle){
         
-        gback.style.visibility = 'visible';
-        right.style.display = 'none';
+        gback.style.visibility = 'visible'
+        right.style.display = 'none'
 
         left.style.justifyContent = 'unset'
         left.style.height = 'auto'
-        leftSidebar.style.height = '100vh';
+        leftSidebar.style.height = '100vh'
         
-        containerL.style.display = 'grid';
+        containerL.style.display = 'grid'
 
-        work.style.height = 'auto'//
+        work.style.height = 'auto'
 
     } else if (e.target == right || e.target == rightSidebar || e.target == rightTitle) {
         
-        gback.style.visibility = 'visible';
-        left.style.display = 'none';
+        gback.style.visibility = 'visible'
+        left.style.display = 'none'
 
         right.style.justifyContent = 'unset'
         right.style.height = 'auto'
-        rightSidebar.style.height = '100vh';
+        rightSidebar.style.height = '100vh'
 
-        containerR.style.display = 'grid';
+        containerR.style.display = 'grid'
         
-        work.style.height = 'auto'//
+        work.style.height = 'auto'
     }
 }
 
 function goback(e) {
     if (e.target == gback) {
-        //"default" properties
-        gback.style.visibility = 'hidden';
+        /* "default" properties of workContainer */
+        gback.style.visibility = 'hidden'
 
-        left.style.display = 'flex';
+        left.style.display = 'flex'
         left.style.justifyContent = 'center'
         left.style.height = '100%'
-        leftSidebar.style.height = 'auto';
+        leftSidebar.style.height = 'auto'
 
-        right.style.display = 'flex';
+        right.style.display = 'flex'
         right.style.justifyContent = 'center'
         right.style.height = '100%'
-        rightSidebar.style.height = 'auto';
+        rightSidebar.style.height = 'auto'
 
-        containerL.style.display = 'none';
-        containerR.style.display = 'none';
+        containerL.style.display = 'none'
+        containerR.style.display = 'none'
+        
         //give back the class n continue the animations
-            animationPc.forEach.call(animationPc, function(el) {
-                el.classList.add("hvr-back-pulse");
-            })
-            animationMob.forEach.call(animationMob, function(el) {
-                el.classList.add("tracking-in-expand");
-            })
+        animationPc.forEach.call(animationPc, function(el) {
+            el.classList.add("hvr-back-pulse")
+        })
+        animationMob.forEach.call(animationMob, function(el) {
+            el.classList.add("tracking-in-expand")
+        })
 
-        work.style.height = '100vh'
+        //pc query 
+        if (window.matchMedia('(min-width: 768px)').matches) {
+            rightSidebar.style.height = '100vh'
+            leftSidebar.style.height = '100vh'
+        }
 
     }
 }
@@ -126,10 +134,10 @@ function goback(e) {
 //Add onload animations to improve the UX
 
 // PC
-window.addEventListener('mouseover', over);
-window.addEventListener('mouseout', out);
-window.addEventListener('click', goback);
+window.addEventListener('mouseover', over)
+window.addEventListener('mouseout', out)
+window.addEventListener('click', goback)
 
 // MOBILE
 // if i touch the screen it reveals the menu -but if i touch again shows "hello im..."-
-window.addEventListener('touchend', tap);
+window.addEventListener('touchend', tap)
