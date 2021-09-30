@@ -97,8 +97,12 @@ body {
     .tracking-in-expand {/*como clase*/
         animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     }
+    #left_sect, #right_sect {
+        justify-content: center;
+        /*justify-content: unset; in JS*/
+        height: 50vh;/**/
+    }
     #sidebarL, #sidebarR {
-        height: 50vh;
     }
     .container {
         align-self: center;
