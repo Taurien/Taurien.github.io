@@ -95,13 +95,13 @@ body {
         flex-direction: column;
         height: 100vh;
     }
-    .tracking-in-expand {/*como clase*/
+    .tracking-in-expand {
         animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     }
     #left_sect, #right_sect {
         justify-content: center;
         /*justify-content: unset; in JS*/
-        height: 50%;
+        height: 100%;
     }
     #sidebarL, #sidebarR {
     }
