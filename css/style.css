@@ -198,7 +198,10 @@ body {
     .workContainer {
         flex-direction: row;
     }
-    #sidebarL, #sidebarR {
+    #left_sect, #right_sect {
+        height: 100%;
+    }
+    #sidebarL, #sidebarR { /* in js gets deleted*/
         height: 100vh;
     }
     .hvr-back-pulse {
