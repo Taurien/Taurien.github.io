@@ -23,18 +23,25 @@ body {
 
 /* --MOBILE-- */
 @media screen and (max-width: 767px) {
-    #test123 { /*add bouncing effect*/
+    #test123 {
+        font-size: 1.2rem;
         align-self: center;
         position: absolute;
         z-index: 2;
         bottom: 3rem;
+
+        animation: vert_Bounce 10s ease 0s infinite normal forwards;
     }
     .aHome {
-        right: 0rem;
-        top: 0rem;
-        background-color: rgba(0, 0, 0, 0.226);
+        right: 1.5rem;
+        top: 1.6rem;
+        background-color: rgba(255, 255, 255, 0.150);
         border-radius: 0.5rem;
         overflow: hidden;
+    }
+    .homeBtn {
+        margin: 0.4rem;
+        width: 2.2rem;
     }
     /* index */
     .menu { /*--issue--*/
@@ -46,7 +53,7 @@ body {
         right: 3%;
     }
     h1 {
-        font-size: 6rem;
+        font-size: 13vmax;
         font-weight: 650;
     }
     /* about */
@@ -80,22 +87,33 @@ body {
         width: 80%;
     }
     /* work */
+    #back {
+        top: 2.2rem;
+        left: 1.5rem;
+    }
     .workContainer {
         flex-direction: column;
+    }
+    .tracking-in-expand {/*como clase*/
+        animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    }
+    #sidebarL {/*for display only*/
+        border-bottom: 1px solid white;
+    } 
+    #sidebarR {/*for display only*/
+        border-top: 1px solid white;
     }
     #sidebarL, #sidebarR {
         height: 50vh;
     }
     .container {
         align-self: center;
-        width: 90%;
         margin-bottom: 2rem;
         grid-gap: 2rem 0rem;
         grid-template-columns: 1fr;
     }
     .projects {
-        /*width: 15rem;
-        height: 16rem;*/
+        height: 10rem;
         border-radius: 1.5rem 0.7rem;/*TO IMPROVE*/
         display: inline-flex;
     }
@@ -119,87 +137,92 @@ body {
         display: none;
     }
     .aHome {
-        right: 0rem;/**/
-        top: 0rem;/**/
+        right: 2rem;/**/
+        top: 2rem;/**/
+        background-color: rgba(255, 255, 255, 0.150);
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+    .homeBtn {
+        margin: 0.3rem;
+        width: 2.6rem;
     }
     /* index */
     .menu { /*--issue--*/
-        background-size: 70rem auto;
-        background-position:  -4vw/*X*/ 8rem;
+        background-size: /*X*/60%/*X*/ auto;
+        background-position:  /*X*/10%/*X*/ 8rem;
     }
 
     nav {
         right: 10%;
     }
     h1 {
-        font-size: 8rem;
+        font-size: 11rem;
         font-weight: 700;
     }
     /* about */
     .aboutContainer div h2 {
         font-size: 5rem;/**/
-        width: 80rem;/**/
+        width: 90%;/**/
     }
     #abt {
-        height: 100vh;
         display: inline-flex;
         justify-content: space-evenly;
     }
     #abtxt {
-        font-size: 1.6rem;
-        width: 56rem;
+        align-self: center;
+        font-size: 1.5rem;
+        width: 46%;
         height: 100%;
     }
     #abtxt span:first-child {
-        margin-bottom: 2rem;
-        font-size: 3.4rem;
+        margin-bottom: 1.3rem;
+        font-size: 3.2rem;
         font-weight: 500;
     }
     #abtxt span {
-        font-size: 1.82rem;
+        font-size: 1.8rem;
     }
     #eg img {
-        width: 9%;
+        width: 8%;
     }
     #abtpic {
-        height: 100%;
+        align-self: flex-end;
+        height: 50vw;
         width: auto;
     }
     /* work */
+    #back {
+        top: 2rem;
+        left: 2rem;
+    }
     .workContainer {
         flex-direction: row;
     }
     #sidebarL, #sidebarR {
         height: 100vh;
     }
+    .hvr-back-pulse {
+        transition-duration: 0.5s;
+        transition-property: color, background-color;
+        cursor: pointer;
+    }
+    .hvr-back-pulse:hover, .hvr-back-pulse:focus, .hvr-back-pulse:active {
+        animation-name: hvr-back-pulse;
+        animation-duration: 1.7s;
+        animation-delay: 0.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        background-color: #616161;
+    }
     .container {
         align-self: center;
-        width: 70%;
         margin-bottom: 4rem;
         grid-gap: 4rem 6rem;
         grid-template-columns: repeat(2, 1fr);
     }
-    @keyframes hvr-back-pulse {
-        50% {
-            background-color: #000000;
-        }
-    }
-    .hvr-back-pulse {
-    transition-duration: 0.5s;
-    transition-property: color, background-color;
-    cursor: pointer;
-    }
-    .hvr-back-pulse:hover, .hvr-back-pulse:focus, .hvr-back-pulse:active {
-    animation-name: hvr-back-pulse;
-    animation-duration: 1.7s;
-    animation-delay: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    background-color: #616161;
-    }
     .projects {
-        /*width: 30rem;
-        height: 32rem;*/
+        height: 15rem;
         border-radius: 2rem 1rem;/*TO IMPROVE*/
         
         transition: all 0.2s;
@@ -210,16 +233,16 @@ body {
     }
     /* contact */
     #cntc {
-        width: 80rem;
+        width: 85%;
         font-size: 3rem;
         top: 22rem;
     }
-    .media img {
-        width: 8rem;
+    .media a {
+        width: 22%;
     }
     .media {
         bottom: 6rem;
-        width: 25%; /*auto*/
+        width: 30%; /*auto*/
     }
 }
 
@@ -230,7 +253,6 @@ body {
 }
 
 .homeBtn {
-    width: 2.5rem;
     height: auto;
     vertical-align: bottom;
 }
@@ -312,9 +334,7 @@ nav a:hover {
 #back {
     visibility: hidden;
     position: fixed;
-    z-index: 2;
-    top: 0rem;
-    left: 0rem;
+    z-index: 4;
     font-size: 1.5rem;
     font-weight: 600;
 }
@@ -345,7 +365,14 @@ nav a:hover {
     display: none; /* grid in JS */
 }
 
+.container a {
+    display: flex;
+    justify-content: center;
+    /*height: ;*/
+}
+
 .projects {
+    width: 100%;
     overflow: hidden;
     background-color: whitesmoke; /* not sure at all */
     border: none;
@@ -390,4 +417,53 @@ nav a:hover {
 *::-webkit-scrollbar-thumb {
     background-color: darkgrey;
     outline: 1px solid slategrey;
+}
+
+/* --ANIMATIONS--*/
+/* mobile bounce */
+@keyframes vert_Bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70% {
+      transform: translateY(-6px);
+    }
+  
+    20%,
+    40%,
+    60% {
+      transform: translateY(6px);
+    }
+  
+    80% {
+      transform: translateY(4.4px);
+    }
+  
+    90% {
+      transform: translateY(-4.4px);
+    }
+}
+/* pc int */
+@keyframes hvr-back-pulse {
+    50% {
+        background-color: #000000;
+    }
+}
+/* mobile int */
+@keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5rem;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
 }
