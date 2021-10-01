@@ -168,6 +168,11 @@ body {
         margin: 0.3rem;
         width: 2.6rem;
     }
+    nav a:hover {
+        /*color: ;*/
+        margin-right: 3rem;
+        transition: all 0.2s ease-in;
+    }
     /* index */
     .menu { /*--issue--*/
         background-size: /*X*/60%/*X*/ auto;
@@ -334,13 +339,6 @@ nav {
 a {
     cursor: pointer;
     color: white;
-}
-
-nav a:hover {
-    /*color: ;*/
-    /* media */
-    margin-right: 3rem;
-    transition: all 0.2s ease-in;
 }
 /* about */
 #abtintro {
