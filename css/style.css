@@ -46,8 +46,8 @@ body {
     /* index */
     .menu { /*--issue--*/
         /*background-image: url(../assets/images/MainFoto*mobile version*.png);*/
-        background-size: 50rem auto;
-        background-position: -16.5rem top;
+        background-size: 52rem auto;
+        background-position: -16.5rem bottom;
     }
     nav {
         right: 3%;
