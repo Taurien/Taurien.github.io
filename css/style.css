@@ -23,7 +23,7 @@ body {
 
 /* --MOBILE-- */
 @media screen and (max-width: 767px) {
-    #test123 {
+    .tap-scroll {
         font-size: 1.2rem;
         align-self: center;
         position: absolute;
@@ -107,14 +107,33 @@ body {
     }
     .container {
         align-self: center;
-        margin-bottom: 2rem;
-        grid-gap: 2rem 0rem;
+        justify-items: center;
+        margin-bottom: 3rem;
+        grid-gap: 3rem 0rem;
         grid-template-columns: 1fr;
     }
+    .container a {
+        width: 70%;
+        height: 11rem;
+    }
     .projects {
-        height: 10rem;
-        border-radius: 1.5rem 0.7rem;/*TO IMPROVE*/
+        width: 100%;
+        height: 100%;
+        border-radius:  2.5rem 0rem 0rem 0.6rem;/*TO IMPROVE*/
         display: inline-flex;
+    }
+    .projects p {
+        margin: 0 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        /*margin: 0 1.2rem;*/
+    }
+    #containerR a {
+        height: 20rem;
+    }
+    #containerR .projects {
+        display: flex;
+        flex-direction: column;
     }
     /* contact */
     #cntc {
@@ -132,7 +151,7 @@ body {
 }
 /* --PC-- */
 @media screen and (min-width: 768px) {
-    #test123 {
+    .tap-scroll {
         display: none;
     }
     .aHome {
@@ -201,7 +220,7 @@ body {
     #left_sect, #right_sect {
         height: 100%;
     }
-    #sidebarL, #sidebarR { /* in js gets deleted*/
+    #sidebarL, #sidebarR {
         height: 100vh;
     }
     .hvr-back-pulse {
@@ -219,15 +238,33 @@ body {
     }
     .container {
         align-self: center;
+        justify-items: center;
         margin-bottom: 4rem;
-        grid-gap: 4rem 6rem;
+        grid-gap: 6rem 0rem;
         grid-template-columns: repeat(2, 1fr);
+        width: 80%;
+    }
+    .container a {
+        justify-content: center;
+        width: 60%;
     }
     .projects {
-        height: 15rem;
-        border-radius: 2rem 1rem;/*TO IMPROVE*/
-        
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border-radius:  2.5rem 1rem 0rem 0.5rem;/*TO IMPROVE*/
+
         transition: all 0.2s;
+    }
+    .projects img {
+        width: inherit;
+        height: inherit;
+    }
+    .projects p {
+        font-size: 1.3rem;
+        font-weight: 600;
+        /*margin: 0 1.2rem;*/
     }
     .projects:hover {
         box-shadow: 0px 6px 12px 3px rgba(255, 255, 255, 0.692);
@@ -369,12 +406,9 @@ nav a:hover {
 
 .container a {
     display: flex;
-    justify-content: center;
-    /*height: ;*/
 }
 
 .projects {
-    width: 100%;
     overflow: hidden;
     background-color: whitesmoke; /* not sure at all */
     border: none;
@@ -383,9 +417,6 @@ nav a:hover {
 
 .projects p {
     text-align: justify;
-    font-size: 1.3rem;
-    font-weight: 600;
-    /*margin: 0 1.2rem;*/
 }
 /* contact */
 .contactContainer {
@@ -450,13 +481,13 @@ nav a:hover {
       transform: translateY(-4.4px);
     }
 }
-/* pc int */
+/* pc - work int */
 @keyframes hvr-back-pulse {
     50% {
         background-color: #000000;
     }
 }
-/* mobile int */
+/* mobile - work int */
 @keyframes tracking-in-expand {
     0% {
       letter-spacing: -0.5rem;
