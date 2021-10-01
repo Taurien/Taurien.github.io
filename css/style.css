@@ -129,11 +129,14 @@ body {
         /*margin: 0 1.2rem;*/
     }
     #containerR a {
-        height: 20rem;
+        height: auto;
     }
     #containerR .projects {
         display: flex;
         flex-direction: column;
+    }
+    #containerR .projects p {
+        margin: 0.5rem 1rem;
     }
     /* contact */
     #cntc {
@@ -264,7 +267,10 @@ body {
     .projects p {
         font-size: 1.3rem;
         font-weight: 600;
-        /*margin: 0 1.2rem;*/
+        margin: 0.6rem 1.2rem;
+    }
+    #containerR .projects {
+        height: auto;
     }
     .projects:hover {
         box-shadow: 0px 6px 12px 3px rgba(255, 255, 255, 0.692);
