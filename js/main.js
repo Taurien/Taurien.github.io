@@ -31,11 +31,16 @@ const animationMob = document.querySelectorAll('.tracking-in-expand')
 
 // Main Menu hover effects
 function over(e) {
-    if (e.target === about) about.textContent = `About`
-
-    if (e.target === work) work.textContent = `Work`
-    
-    if (e.target === contact) contact.textContent = `Contact`
+    if (e.target === about) {
+        about.textContent = `About`
+        about.parentNode.setAttribute('href', './about.html')
+    } else if (e.target === work) {
+        work.textContent = `Work`
+        work.parentNode.setAttribute('href', './work.html')
+    } else if (e.target === contact) {
+        contact.textContent = `Contact`
+        contact.parentNode.setAttribute('href', './contact.html')
+    }
 }
 
 function out() {
@@ -49,14 +54,20 @@ let count = 0
 function tap() {
     if ((count % 2) === 0 /*|| e.target === animationMob*/) {
     about.textContent = `About`
+    about.parentNode.setAttribute('href', './about.html')
     work.textContent = `Work`
+    work.parentNode.setAttribute('href', './work.html')
     contact.textContent = `Contact`
+    contact.parentNode.setAttribute('href', './contact.html')
     count++
     //console.log('here');
     } else /*if (count % 2) !== 0 /*|| e.target === animationMob)*/ {
     about.textContent = `Hello.`
+    //about.parentNode.removeAttribute('href', './about.html')
     work.textContent = `I am`
+    //work.parentNode.removeAttribute('href', './work.html')
     contact.textContent = `Michel`
+    //contact.parentNode.removeAttribute('href', './contact.html')
     //console.log(`here ${count}`);
     count++
     }
