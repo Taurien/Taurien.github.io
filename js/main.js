@@ -1,3 +1,5 @@
+"use strict"
+
 /* Solve the  100vh behavior on mobile */
 function resetHeight(){
     // reset the body height to that of the inner browser
@@ -5,11 +7,10 @@ function resetHeight(){
 }
 // reset the height whenever the window's resized
 window.addEventListener('resize', resetHeight)
+
 const mobileQuery = window.matchMedia('(max-width: 767px)')
-    if (mobileQuery.matches) {
-    // called to initially set the height.
-        resetHeight()
-    }
+// called to initially set the height.
+if (mobileQuery.matches) resetHeight()
 
 /* index */
 const about = document.getElementById('about')
@@ -30,26 +31,35 @@ const animationMob = document.querySelectorAll('.tracking-in-expand')
 
 // Main Menu hover effects
 function over(e) {
-    if (e.target == about) {
-        about.innerHTML = `About`
-    } else if (e.target == work) {
-        work.innerHTML = `Work`
-    } else if (e.target == contact) {
-        contact.innerHTML = `Contact`
-    }
+    if (e.target === about) about.textContent = `About`
+
+    if (e.target === work) work.textContent = `Work`
+    
+    if (e.target === contact) contact.textContent = `Contact`
 }
 
 function out() {
-    about.innerHTML = `Hello.`
-    work.innerHTML = `I am`
-    contact.innerHTML = `Michel`
+    about.textContent = `Hello.`
+    work.textContent = `I am`
+    contact.textContent = `Michel`
 }
 
 // Reveal the menu MOBILE
+let count = 0
 function tap() {
-    about.innerHTML = `About`
-    work.innerHTML = `Work`
-    contact.innerHTML = `Contact`        
+    if ((count % 2) === 0 /*|| e.target === animationMob*/) {
+    about.textContent = `About`
+    work.textContent = `Work`
+    contact.textContent = `Contact`
+    count++
+    //console.log('here');
+    } else /*if (count % 2) !== 0 /*|| e.target === animationMob)*/ {
+    about.textContent = `Hello.`
+    work.textContent = `I am`
+    contact.textContent = `Michel`
+    //console.log(`here ${count}`);
+    count++
+    }
 }
 
 // Work interaction
@@ -66,7 +76,7 @@ function menuL_or_R(e) {
     })
 
 
-    if (e.target == left || e.target == leftSidebar || e.target == leftTitle){
+    if (e.target === left || e.target === leftSidebar || e.target === leftTitle){
         
         gback.style.visibility = 'visible'
         right.style.display = 'none'
@@ -79,7 +89,7 @@ function menuL_or_R(e) {
 
         work.style.height = 'auto'
 
-    } else if (e.target == right || e.target == rightSidebar || e.target == rightTitle) {
+    } else if (e.target === right || e.target === rightSidebar || e.target === rightTitle) {
         
         gback.style.visibility = 'visible'
         left.style.display = 'none'
@@ -95,7 +105,7 @@ function menuL_or_R(e) {
 }
 
 function goback(e) {
-    if (e.target == gback) {
+    if (e.target === gback) {
         /* "default" properties of workContainer */
         gback.style.visibility = 'hidden'
 
