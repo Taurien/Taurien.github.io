@@ -13,6 +13,7 @@ const mobileQuery = window.matchMedia('(max-width: 767px)')
 if (mobileQuery.matches) resetHeight()
 
 /* index */
+const nav = document.querySelectorAll('.introUP')
 const about = document.getElementById('about')
 const work = document.getElementById('work')
 const contact = document.getElementById('contact')
@@ -28,6 +29,13 @@ const containerL = document.getElementById('containerL')
 const containerR = document.getElementById('containerR')
 const animationPc = document.querySelectorAll('.hvr-back-pulse')
 const animationMob = document.querySelectorAll('.tracking-in-expand')
+
+// Main Menu slide up effect
+nav.forEach(function (el, index) {
+    setTimeout(function () {
+      el.style.animation = 'animH1 1s ease 0s 1 normal forwards'
+    }, index * 320)
+})
 
 // Main Menu hover effects
 function over(e) {
