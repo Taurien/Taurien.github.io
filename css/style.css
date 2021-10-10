@@ -343,6 +343,10 @@ nav {
     opacity: 0;
 }
 
+#work, #contact {
+    color: rgb(252, 163, 17);
+}
+
 a {
     cursor: pointer;
     color: white;
