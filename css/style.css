@@ -338,7 +338,7 @@ body {
     z-index: -1;
     background-image: url(../assets/images/MainFoto.png);
     background-repeat: no-repeat;
-    animation: photoAnim 1s ease 0s 1 normal forwards;
+    /*animation: photoAnim 1s ease 0s 1 normal forwards;*/
 }
 
 nav {
